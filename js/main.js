@@ -43,10 +43,11 @@ fetch("https://api.currencyfreaks.com/latest?apikey=fecaeaa9bb504e27b03c7189978d
     firstSelectBox.addEventListener('change', function(){
         secondNumberInput.value = (+firstNumberInput.value * (+currency.rates[secondSelectBox.value] / +currency.rates[firstSelectBox.value])).toFixed(2);
         firstCurrency.innerHTML = `1 ${firstSelectBox.value} equals`;
+        secondCurrency.innerHTML = `${(+currency.rates[secondSelectBox.value] / +currency.rates[firstSelectBox.value]).toFixed(2)} ${secondSelectBox.value}`;
     });
     secondSelectBox.addEventListener('change', function(){
         secondNumberInput.value = (+firstNumberInput.value * (+currency.rates[secondSelectBox.value] / +currency.rates[firstSelectBox.value])).toFixed(2);
-        secondCurrency.innerHTML = `${(+currency.rates[secondSelectBox.value] / +currency.rates[firstSelectBox.value]).toFixed(2)} ${secondSelectBox.value}`;;
+        secondCurrency.innerHTML = `${(+currency.rates[secondSelectBox.value] / +currency.rates[firstSelectBox.value]).toFixed(2)} ${secondSelectBox.value}`;
     });
 })
 let time = document.querySelector('.time span');
